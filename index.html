@@ -16,24 +16,32 @@
             color: white;
             padding: 20px;
         }
-
         .trail {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background: rgba(13, 131, 21, 0.8); /* Green */
-            border-radius: 50%;
-            pointer-events: none;
-            animation: fadeOut 0.5s ease-out forwards;
-        }
+    position: absolute;
+    width: 20px;               /* Larger size */
+    height: 20px;              /* Larger size */
+    background: radial-gradient(circle, white, rgba(13, 131, 21, 0.8));
+    opacity: 0.8;              /* Initial opacity */
+    border-radius: 50%;
+    pointer-events: none;
+    animation: fadeOut 1s ease-out forwards, sparkle 1s ease-out infinite;
+}
 
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        transform: scale(2);  /* Larger scale effect */
+    }
+}
 
-        @keyframes fadeOut {
-            to {
-                opacity: 0;
-                transform: scale(0.5);
-            }
-        }
+@keyframes sparkle {
+    0%, 100% {
+        transform: translateY(-5px);
+    }
+    50% {
+        transform: translateY(5px);
+    }
+}
 
 
         section {
