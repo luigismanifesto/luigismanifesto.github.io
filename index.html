@@ -61,19 +61,22 @@
         }
 
         button {
-            padding: 10px 20px;
-            margin: 5px;
-            background-color: #0d8315;
-            color: white;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            font-size: 16px;
-        }
+    padding: 20px 40px;      /* Increase button size */
+    margin: 10px;            /* Space between buttons */
+    background-color: #0d8315;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;     /* Rounded corners */
+    font-size: 24px;         /* Larger font */
+    font-weight: bold;       /* Bold text */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth animation */
+}
 
-        button:hover {
-            background-color: #0b6913;
-        }
+button:hover {
+    background-color: #0b6913;  /* Darker background on hover */
+    transform: scale(1.2);      /* Grow the button by 20% */
+}
     </style>
 </head>
 <body>
