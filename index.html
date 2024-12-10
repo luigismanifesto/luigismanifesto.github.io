@@ -17,6 +17,24 @@
             padding: 20px;
         }
 
+        .trail {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: rgba(13, 131, 21, 0.8); /* Green */
+            border-radius: 50%;
+            pointer-events: none;
+            animation: fadeOut 0.5s ease-out forwards;
+        }
+
+
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+        }
+
 
         section {
             background: rgba(0, 0, 0, 0.9);
@@ -151,6 +169,23 @@
         const audio = document.getElementById('audio');
         audio.play().catch(error => console.log("Playback failed:", error));
     });
+
+    // Mouse effect
+document.addEventListener('mousemove', (event) => {
+    // Create a trail element
+    const trail = document.createElement('div');
+    trail.className = 'trail';
+
+    // Position the trail element at the mouse coordinates
+    trail.style.left = `${event.pageX}px`;
+    trail.style.top = `${event.pageY}px`;
+
+    // Add the trail element to the page
+    document.body.appendChild(trail);
+
+    // Remove the trail element after animation completes
+    setTimeout(() => trail.remove(), 500);
+});
 </script>
 
 </body>
